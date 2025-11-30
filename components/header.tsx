@@ -1,7 +1,7 @@
 'use client';
 import { BookOpen, Users, BarChart3, Rocket } from 'lucide-react';
 
-export default function Header() {
+export default function header() {
   return (
     <header className="bg-space-navy/80 backdrop-blur-md border-b border-space-purple/20 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
