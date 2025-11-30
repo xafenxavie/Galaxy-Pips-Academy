@@ -1,6 +1,6 @@
 import { Twitter, Youtube, Github, Mail } from 'lucide-react';
 
-export default function Footer() {
+export default function footer() {
   return (
     <footer className="bg-space-dark border-t border-space-purple/20">
       <div className="container mx-auto px-4 py-12">
