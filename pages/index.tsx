@@ -1,15 +1,15 @@
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import CourseGrid from '../components/CourseGrid';
-import Footer from '../components/Footer';
+import header from '../components/header';
+import hero from '../components/hero';
+import coursegrid from '../components/coursegrid';
+import footer from '../components/footer';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-space-dark">
-      <Header />
-      <Hero />
-      <CourseGrid />
-      <Footer />
+      <header />
+      <hero />
+      <coursegrid />
+      <footer />
     </div>
   );
 }
