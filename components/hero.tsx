@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function hero() {
   return (
     <section className="galaxy-bg star-field min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="container mx-auto px-4 text-center relative z-10">
