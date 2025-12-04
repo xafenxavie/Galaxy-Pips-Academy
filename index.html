@@ -9,11 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Replace with your AdSense snippet when ready:
-  <script data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  -->
+  <!-- AdSense: place your snippet here when ready -->
 </head>
 <body>
+  <!-- HEADER: Brand, Navigation, Search, Login/Signup -->
   <header class="site-header" role="banner">
     <div class="wrap header-row">
       <a class="brand" href="/">
@@ -24,6 +23,7 @@
         </div>
       </a>
 
+      <!-- Desktop nav -->
       <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="#school">School</a></li>
@@ -34,218 +34,378 @@
         </ul>
       </nav>
 
-      <div class="header-actions">
+      <!-- Actions (desktop) -->
+      <div class="header-actions desktop-only">
+        <form id="headerSearchForm" class="search-form" role="search" aria-label="Search blog posts">
+          <input id="headerSearch" type="search" placeholder="Search blog..." />
+          <button type="submit" aria-label="Search">🔍</button>
+        </form>
         <a class="btn btn-ghost" href="#newsletter">Newsletter</a>
         <a class="btn btn-primary" href="#school">Start Learning</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="mobileToggle" class="hamburger mobile-only" aria-label="Open menu">☰</button>
+    </div>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <div class="mobile-brand">
+          <img src="logo.png" alt="logo" class="logo-small" />
+          <div>
+            <div class="brand-title-sm">Galaxy Pips Academy</div>
+            <div class="brand-sub-sm">Beyond the Horizon</div>
+          </div>
+        </div>
+
+        <form id="mobileSearchForm" class="search-form" role="search" aria-label="Search blog posts (mobile)">
+          <input id="mobileSearch" type="search" placeholder="Search blog..." />
+          <button type="submit" aria-label="Search">🔍</button>
+        </form>
+
+        <ul class="mobile-links">
+          <li><a href="#school">School</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#analysis">Market</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#newsletter">Newsletter</a></li> <!-- newsletter in hamburger -->
+        </ul>
+
+        <div class="mobile-auth">
+          <a class="link" href="#login">Login</a>
+          <a class="btn btn-primary block" href="#signup">Sign Up</a>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO / CAROUSEL -->
-    <section class="hero">
-      <div class="hero-carousel" aria-live="polite">
-        <div class="hero-slide active">
-          <div class="wrap hero-grid">
-            <div class="hero-copy">
-              <h1>Learn Forex the Smart Way — One Lesson at a Time</h1>
-              <p class="lead">Structured, beginner-friendly lessons, practical tools, and clear progress tracking to help you build real trading knowledge.</p>
-              <div class="hero-ctas">
-                <a class="btn btn-primary" href="#school">Begin Level 1 (Free)</a>
-                <a class="btn btn-outline" href="#about">About Us</a>
-              </div>
-              <ul class="feature-badges">
-                <li>Step-by-step curriculum</li>
-                <li>Free calculators</li>
-                <li>Quizzes & certificates</li>
-              </ul>
-            </div>
 
-            <div class="hero-media" aria-hidden="true">
-              <div class="card-visual">
-                <svg class="chart-svg" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart illustration">
-                  <defs>
-                    <linearGradient id="lg1" x1="0" x2="1"><stop offset="0" stop-color="#6a2bb8"/><stop offset="1" stop-color="#22e6ff"/></linearGradient>
-                  </defs>
-                  <rect width="360" height="220" rx="12" fill="url(#bgGradient)" opacity="0.03"/>
-                  <polyline points="20,180 70,140 120,160 170,110 220,130 270,70 320,95" stroke="url(#lg1)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <!-- candlesticks -->
-                  <rect x="60" y="132" width="8" height="12" fill="#22e6ff" rx="1"></rect>
-                  <rect x="170" y="96" width="8" height="28" fill="#e348ff" rx="1"></rect>
-                  <rect x="260" y="64" width="8" height="44" fill="#22e6ff" rx="1"></rect>
-                </svg>
-              </div>
-            </div>
+    <!-- HERO: intentionally blank for ad placement; white background, small banner height on mobile/desktop -->
+    <!-- HERO SECTION -->
+    <section id="hero" class="wrap hero-blank" aria-label="Hero ad area">
+      <!-- blank white area reserved for ads - do not add content here -->
+    </section>
+
+    <!-- QUICK FEATURES: continuous ticker style with faster mobile speed, pause on hover, fades, parallax + glow + center highlight -->
+    <!-- QUICK FEATURES SECTION -->
+    <section id="quick" class="section-colored">
+      <div class="wrap">
+        <h2 class="section-title">Why Students Love Our Academy</h2>
+
+        <div class="continuous-carousel" id="continuousCarousel" aria-hidden="false">
+          <div class="continuous-track" id="continuousTrack">
+            <!-- features: original set -->
+            <article class="feature">
+              <h3>Beginner-Friendly Lessons</h3>
+              <p>Clear explanations about pips, lots, market orders, charts, and core trading ideas.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Tools & Calculators</h3>
+              <p>Compute pip value, position size and manage risk effortlessly.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Progress Tracking</h3>
+              <p>Quizzes, progress reports and certificates to measure improvement.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Real-World Examples</h3>
+              <p>Follow guided breakdowns of real charts and analyses.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Trading Psychology</h3>
+              <p>Master discipline, patience and emotional control.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Market Analysis Guides</h3>
+              <p>Understand fundamentals, technicals, trends and volatility.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Interactive Quizzes</h3>
+              <p>Test your knowledge after each module.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Community Support</h3>
+              <p>Join discussions, ask questions and grow with other learners.</p>
+            </article>
+
+            <article class="feature">
+              <h3>Lifetime Access</h3>
+              <p>Learn at your own pace with unlimited platform access.</p>
+            </article>
           </div>
         </div>
 
-        <div class="hero-slide">
-          <div class="wrap hero-grid">
-            <div class="hero-copy">
-              <h1>Free Practical Tools — Pip & Position Calculators</h1>
-              <p class="lead">Use built-in calculators that help you translate theory into practice — risk sizing made simple.</p>
-              <div class="hero-ctas">
-                <a class="btn btn-primary" href="#tools">Open Tools</a>
-                <a class="btn btn-outline" href="#school">See Curriculum</a>
-              </div>
-              <ul class="feature-badges">
-                <li>Pip calculator</li>
-                <li>Position size tool</li>
-                <li>Economic calendar</li>
-              </ul>
-            </div>
-
-            <div class="hero-media" aria-hidden="true">
-              <div class="card-visual">
-                <!-- icon or illustration -->
-                <svg viewBox="0 0 120 120" width="220" height="220" aria-hidden="true">
-                  <circle cx="60" cy="60" r="56" fill="rgba(255,255,255,0.06)"/>
-                  <path d="M30 80 L60 50 L90 70" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-slide">
-          <div class="wrap hero-grid">
-            <div class="hero-copy">
-              <h1>Track Progress & Build Discipline</h1>
-              <p class="lead">Short quizzes after each lesson and a progress tracker help you retain skills and stay consistent.</p>
-              <div class="hero-ctas">
-                <a class="btn btn-primary" href="#school">Start Quizzes</a>
-                <a class="btn btn-outline" href="#community">Join Community</a>
-              </div>
-              <ul class="feature-badges">
-                <li>Short quizzes</li>
-                <li>Certificates</li>
-                <li>Community support</li>
-              </ul>
-            </div>
-
-            <div class="hero-media" aria-hidden="true">
-              <div class="card-visual">
-                <svg viewBox="0 0 120 120" width="220" height="220" aria-hidden="true">
-                  <rect x="20" y="40" width="20" height="40" fill="#22e6ff" rx="3"></rect>
-                  <rect x="50" y="30" width="20" height="50" fill="#6a2bb8" rx="3"></rect>
-                  <rect x="80" y="20" width="20" height="60" fill="#f2c744" rx="3"></rect>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-indicators" aria-hidden="true">
-          <button class="ind-btn active" data-slide="0" aria-label="Slide 1"></button>
-          <button class="ind-btn" data-slide="1" aria-label="Slide 2"></button>
-          <button class="ind-btn" data-slide="2" aria-label="Slide 3"></button>
+        <!-- start learning button below quick features (same style as header start learning) -->
+        <div class="center-cta">
+          <a class="btn btn-primary big-cta" href="#school">Start Learning</a>
         </div>
       </div>
     </section>
 
-   <!-- QUICK FEATURES CAROUSEL -->
-<!-- CONTINUOUS SCROLLING FEATURES -->
-<section id="quick" class="section-colored">
-  <div class="wrap">
+    <!-- BLOG + SIDEBAR SECTION -->
+    <!-- BLOG POSTS SECTION -->
+    <section id="blog" class="wrap blog-section">
+      <div class="blog-grid">
 
-    <!-- <h2 class="section-title">Why Students Love Our Academy</h2> -->
+        <!-- MAIN POSTS AREA -->
+        <div class="posts-area">
+          <h2 class="section-title">Latest Articles</h2>
 
-    <div class="continuous-carousel">
-      <div class="continuous-track">
+          <!-- Top two featured posts side-by-side on desktop, stacked on mobile -->
+          <div class="featured-row">
+            <article class="post post-large">
+              <img src="https://picsum.photos/800/450?random=1" alt="Demo post 1">
+              <div class="post-body">
+                <h3>How Forex Trading Works: A Beginner's Overview</h3>
+                <p class="excerpt">A friendly introduction to forex — how currency pairs move, what pips are, and the basics of trading safely.</p>
+                <a class="read-more" href="#">Read more →</a>
+              </div>
+            </article>
 
-        <!-- ORIGINAL FEATURES (YOU CAN ADD MORE) -->
-        <article class="feature">
-          <h3>Beginner-Friendly Lessons</h3>
-          <p>Clear explanations about pips, lots, market orders, charts, and core trading ideas.</p>
-        </article>
+            <article class="post post-large">
+              <img src="https://picsum.photos/800/450?random=2" alt="Demo post 2">
+              <div class="post-body">
+                <h3>Understanding Market Sessions and Their Impact</h3>
+                <p class="excerpt">Learn how trading sessions affect liquidity, volatility and the best times to trade major pairs.</p>
+                <a class="read-more" href="#">Read more →</a>
+              </div>
+            </article>
+          </div>
 
-        <article class="feature">
-          <h3>Tools & Calculators</h3>
-          <p>Compute pip value, position size and manage risk effortlessly.</p>
-        </article>
+          <!-- Grid for the remaining 12 posts (6 rows x 2 columns on desktop; stacked on mobile) -->
+          <div class="posts-grid" id="postsGrid">
+            <!-- Demo small posts (12) -->
+            <!-- We'll include 12 demo posts -->
+            <!-- Use loop-like structure in HTML manually -->
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=3" alt="post3">
+              <div class="post-body">
+                <h4>How to Use a Pip Calculator</h4>
+                <p class="excerpt">Quick example on calculating pip values for various lot sizes.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <article class="feature">
-          <h3>Progress Tracking</h3>
-          <p>Quizzes, progress reports and certificates to measure improvement.</p>
-        </article>
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=4" alt="post4">
+              <div class="post-body">
+                <h4>Top 5 Mistakes Beginners Make</h4>
+                <p class="excerpt">Avoid these common errors when you start trading forex.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <article class="feature">
-          <h3>Real-World Examples</h3>
-          <p>Follow guided breakdowns of real charts and analyses.</p>
-        </article>
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=5" alt="post5">
+              <div class="post-body">
+                <h4>Position Sizing for Real Traders</h4>
+                <p class="excerpt">How to size positions to protect your account.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <article class="feature">
-          <h3>Trading Psychology</h3>
-          <p>Master discipline, patience and emotional control.</p>
-        </article>
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=6" alt="post6">
+              <div class="post-body">
+                <h4>Reading Candlestick Patterns</h4>
+                <p class="excerpt">Simple candle patterns you should know as a beginner.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <article class="feature">
-          <h3>Market Analysis Guides</h3>
-          <p>Understand fundamentals, technicals, trends and volatility.</p>
-        </article>
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=7" alt="post7">
+              <div class="post-body">
+                <h4>Understanding Leverage</h4>
+                <p class="excerpt">Leverage explained: how it works and how to use it responsibly.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <article class="feature">
-          <h3>Interactive Quizzes</h3>
-          <p>Test your knowledge after each module.</p>
-        </article>
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=8" alt="post8">
+              <div class="post-body">
+                <h4>Why Journaling Matters</h4>
+                <p class="excerpt">Track trades to improve your performance and discipline.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <article class="feature">
-          <h3>Community Support</h3>
-          <p>Join discussions, ask questions and grow with other learners.</p>
-        </article>
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=9" alt="post9">
+              <div class="post-body">
+                <h4>Trend vs Range Trading</h4>
+                <p class="excerpt">Which approach fits your personality and market conditions.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <article class="feature">
-          <h3>Lifetime Access</h3>
-          <p>Learn at your own pace with unlimited platform access.</p>
-        </article>
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=10" alt="post10">
+              <div class="post-body">
+                <h4>How News Moves Markets</h4>
+                <p class="excerpt">Basic guide to economic releases and market reaction.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
 
-        <!-- DUPLICATE FEATURES FOR SMOOTH LOOP -->
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=11" alt="post11">
+              <div class="post-body">
+                <h4>Support & Resistance Basics</h4>
+                <p class="excerpt">Use horizontal levels to find trade ideas.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
+
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=12" alt="post12">
+              <div class="post-body">
+                <h4>Risk Management Rules</h4>
+                <p class="excerpt">Simple risk rules that keep accounts alive.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
+
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=13" alt="post13">
+              <div class="post-body">
+                <h4>Using Moving Averages</h4>
+                <p class="excerpt">How to use moving averages for trend direction.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
+
+            <article class="post post-small">
+              <img src="https://picsum.photos/400/260?random=14" alt="post14">
+              <div class="post-body">
+                <h4>Preparing a Trading Plan</h4>
+                <p class="excerpt">A checklist for building your first trading plan.</p>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- SIDEBAR (Desktop only): ads and feature demos in sequence -->
+        <aside class="sidebar desktop-only">
+          <div class="ad-card">
+            <img src="https://picsum.photos/300/150?random=21" alt="ad demo 1">
+          </div>
+
+          <div class="feature-card">
+            <h4>Pip Calculator</h4>
+            <p>Demo preview</p>
+            <img src="https://picsum.photos/300/140?random=22" alt="feature demo pip">
+          </div>
+
+          <div class="ad-card">
+            <img src="https://picsum.photos/300/150?random=23" alt="ad demo 2">
+          </div>
+
+          <div class="feature-card">
+            <h4>Position Size Tool</h4>
+            <p>Demo preview</p>
+            <img src="https://picsum.photos/300/140?random=24" alt="feature demo pos">
+          </div>
+
+          <div class="ad-card">
+            <img src="https://picsum.photos/300/150?random=25" alt="ad demo 3">
+          </div>
+
+          <div class="feature-card">
+            <h4>Economic Calendar</h4>
+            <p>Demo preview</p>
+            <img src="https://picsum.photos/300/140?random=26" alt="feature demo cal">
+          </div>
+        </aside>
+
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- On mobile we show a small nav reminder after blog posts (per your request) -->
+    <nav class="mobile-nav-after-posts mobile-only">
+      <div class="wrap">
+        <ul>
+          <li><a href="#school">School</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#community">Community</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <!-- SCHOOL / LEVELS -->
+    <!-- SCHOOL LEVELS: carousel with per-level CTA buttons -->
+    <!-- SCHOOL LEVELS SECTION -->
     <section id="school" class="wrap section-gradient">
       <header class="section-header">
         <h2>Structured Learning Path</h2>
         <p class="subtitle">Move from basics to confident trading with our step-by-step levels.</p>
       </header>
 
-      <div class="levels-grid">
-        <div class="level-card">
-          <div class="level-badge">Level 1</div>
-          <h4>Forex Basics</h4>
-          <p>Understand what forex is, currency pairs and how to read price charts.</p>
-          <a class="link-more" href="#level1">Start Level 1 →</a>
-        </div>
+      <div class="levels-carousel-wrapper">
+        <button class="level-arrow prev" aria-label="Previous level">‹</button>
+        <div class="levels-carousel" id="levelsCarousel">
+          <div class="level">
+            <div class="level-badge">Level 1</div>
+            <h4>Forex Basics</h4>
+            <p>Understand what forex is, currency pairs and how to read price charts.</p>
+            <a class="btn btn-primary level-cta" href="#level1">Start Class</a>
+          </div>
 
-        <div class="level-card">
-          <div class="level-badge">Level 2</div>
-          <h4>Charting & Strategies</h4>
-          <p>Price action, candles, indicators and simple strategy foundations.</p>
-          <a class="link-more" href="#level2">View Level 2 →</a>
-        </div>
+          <div class="level">
+            <div class="level-badge">Level 2</div>
+            <h4>Charting & Strategies</h4>
+            <p>Price action, candles, indicators and simple strategy foundations.</p>
+            <a class="btn btn-primary level-cta" href="#level2">Start Class</a>
+          </div>
 
-        <div class="level-card">
-          <div class="level-badge">Level 3</div>
-          <h4>Market Analysis</h4>
-          <p>Technical and fundamental analysis, multi-timeframe thinking and macro drivers.</p>
-          <a class="link-more" href="#level3">View Level 3 →</a>
-        </div>
+          <div class="level">
+            <div class="level-badge">Level 3</div>
+            <h4>Market Analysis</h4>
+            <p>Technical and fundamental analysis, multi-timeframe thinking and macro drivers.</p>
+            <a class="btn btn-primary level-cta" href="#level3">Start Class</a>
+          </div>
 
-        <div class="level-card">
-          <div class="level-badge">Level 4</div>
-          <h4>Risk & Psychology</h4>
-          <p>Position sizing, risk rules, emotional control, and journaling for consistency.</p>
-          <a class="link-more" href="#level4">View Level 4 →</a>
+          <div class="level">
+            <div class="level-badge">Level 4</div>
+            <h4>Risk & Psychology</h4>
+            <p>Position sizing, risk rules, emotional control, and journaling for consistency.</p>
+            <a class="btn btn-primary level-cta" href="#level4">Start Class</a>
+          </div>
+
+          <div class="level">
+            <div class="level-badge">Level 5</div>
+            <h4>Advanced Strategy</h4>
+            <p>Advanced setups and backtesting principles.</p>
+            <a class="btn btn-primary level-cta" href="#level5">Start Class</a>
+          </div>
+
+          <div class="level">
+            <div class="level-badge">Level 6</div>
+            <h4>Live Trading Concepts</h4>
+            <p>Simulations and live examples.</p>
+            <a class="btn btn-primary level-cta" href="#level6">Start Class</a>
+          </div>
+
         </div>
+        <button class="level-arrow next" aria-label="Next level">›</button>
       </div>
     </section>
 
-    <!-- TOOLS -->
-    <section id="tools" class="wrap section-dark">
+    <!-- TOOLS SECTION: illuminated cards with glow -->
+    <!-- TOOLS SECTION -->
+    <section id="tools" class="wrap section-dark tools-illuminated">
       <header class="section-header light">
         <h2>Practical Tools</h2>
         <p class="subtitle">Handy calculators and a market calendar to support your learning.</p>
@@ -270,32 +430,25 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="wrap">
+    <!-- TESTIMONIALS: sliding carousel (center highlight effect) -->
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="wrap">
       <header class="section-header">
         <h2>Student Stories</h2>
         <p class="subtitle">Learners who built their foundations with Galaxy Pips Academy.</p>
       </header>
 
-      <div class="testimonials-grid">
-        <blockquote class="testimonial">
-          <p>"Clear lessons and practical tools — perfect for getting started."</p>
-          <cite>— A. Mwanga</cite>
-        </blockquote>
-
-        <blockquote class="testimonial">
-          <p>"The quizzes helped me retain what I learned. Highly recommended."</p>
-          <cite>— T. Njoroge</cite>
-        </blockquote>
-
-        <blockquote class="testimonial">
-          <p>"I appreciated the risk-first approach. Clear, realistic, and helpful."</p>
-          <cite>— L. Ade</cite>
-        </blockquote>
+      <div class="test-carousel" id="testCarousel">
+        <div class="test-track">
+          <blockquote class="testimonial"> <p>"Clear lessons and practical tools — perfect for getting started."</p><cite>— A. Mwanga</cite></blockquote>
+          <blockquote class="testimonial"> <p>"The quizzes helped me retain what I learned. Highly recommended."</p><cite>— T. Njoroge</cite></blockquote>
+          <blockquote class="testimonial"> <p>"I appreciated the risk-first approach. Clear, realistic, and helpful."</p><cite>— L. Ade</cite></blockquote>
+          <blockquote class="testimonial"> <p>"Easy to follow modules with useful examples."</p><cite>— M. Otieno</cite></blockquote>
+        </div>
       </div>
     </section>
 
-    <!-- NEWSLETTER -->
+    <!-- NEWSLETTER (unchanged) -->
     <section id="newsletter" class="wrap section-colored">
       <div class="newsletter-card">
         <h3>Join the Academy Newsletter</h3>
@@ -308,12 +461,13 @@
       </div>
     </section>
 
-    <!-- DISCLAIMER -->
+    <!-- DISCLAIMER (unchanged) -->
     <section class="wrap disclaimer">
       <p><strong>Risk Disclaimer:</strong> Galaxy Pips Academy provides educational content only. Trading forex involves risk and can lead to losses. We do not provide investment advice or guarantee profits. Always manage risk and consider independent advice.</p>
     </section>
   </main>
 
+  <!-- FOOTER: keep structure but links white -->
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="col">
@@ -355,18 +509,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-  // Duplicate items so scrolling never shows gaps
-  const track = document.querySelector('.continuous-track');
-  const items = Array.from(track.children);
-
-  items.forEach(item => {
-    const clone = item.cloneNode(true);
-    track.appendChild(clone);
-  });
-</script>
-
-
-
 </body>
 </html>
