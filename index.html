@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Galaxy Pips Academy — Learn Forex the Smart Way</title>
   <meta name="description" content="Galaxy Pips Academy: beginner-friendly forex lessons, practical tools, progress tracking and community. Start learning forex step-by-step." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- AdSense: place your snippet here when ready -->
 </head>
 <body>
-  <!-- HEADER: Brand, Navigation, Search, Login/Signup -->
+  <!-- HEADER: brand, nav (desktop), hamburger (mobile) -->
   <header class="site-header" role="banner">
     <div class="wrap header-row">
       <a class="brand" href="/">
-        <img src="logo.png" alt="Galaxy Pips Academy" class="logo" />
+        <img src="logo.png" alt="Galaxy Pips Academy logo" class="logo" />
         <div class="brand-text">
           <span class="brand-title">Galaxy Pips Academy</span>
           <small class="brand-sub">Beyond the Horizon</small>
@@ -34,440 +33,734 @@
         </ul>
       </nav>
 
-      <!-- Actions (desktop) -->
-      <div class="header-actions desktop-only">
-        <form id="headerSearchForm" class="search-form" role="search" aria-label="Search blog posts">
-          <input id="headerSearch" type="search" placeholder="Search blog..." />
-          <button type="submit" aria-label="Search">🔍</button>
-        </form>
-        <a class="btn btn-ghost" href="#newsletter">Newsletter</a>
-        <a class="btn btn-primary" href="#school">Start Learning</a>
+      <!-- Search Icon for Desktop -->
+      <div class="desktop-search-container">
+        <button class="search-icon-btn" id="desktopSearchBtn" aria-label="Open search">
+          🔍
+        </button>
+        <div class="search-input-wrapper" id="desktopSearchInputWrapper">
+          <input type="text" id="desktopSearchInput" placeholder="Search posts and analysis..." />
+          <button class="search-close-btn" id="desktopSearchClose">✕</button>
+        </div>
       </div>
 
+      <!-- Desktop auth links (text) -->
+      <div class="desktop-auth">
+        <a class="auth-link" href="#signin">Sign In</a>
+        <span class="sep">|</span>
+        <a class="auth-link" href="#signup">Sign Up</a>
+      </div>
+
+      <!-- Mobile Search Icon -->
+      <button class="mobile-search-icon" id="mobileSearchIcon" aria-label="Open search">
+        🔍
+      </button>
+
       <!-- Mobile hamburger -->
-      <button id="mobileToggle" class="hamburger mobile-only" aria-label="Open menu">☰</button>
+      <button id="mobileToggle" class="mobile-toggle" aria-label="Open menu">
+        ☰
+      </button>
     </div>
 
-    <!-- Mobile menu (hidden by default) -->
-    <div id="mobileMenu" class="mobile-menu">
+    <!-- Mobile Search Input -->
+    <div class="mobile-search-container" id="mobileSearchContainer">
+      <input type="text" id="mobileSearchInput" placeholder="Search posts and analysis..." />
+      <button class="search-close-btn" id="mobileSearchClose">✕</button>
+    </div>
+
+    <!-- MOBILE MENU (hidden on desktop) -->
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-inner">
-        <div class="mobile-brand">
-          <img src="logo.png" alt="logo" class="logo-small" />
-          <div>
-            <div class="brand-title-sm">Galaxy Pips Academy</div>
-            <div class="brand-sub-sm">Beyond the Horizon</div>
-          </div>
-        </div>
-
-        <form id="mobileSearchForm" class="search-form" role="search" aria-label="Search blog posts (mobile)">
-          <input id="mobileSearch" type="search" placeholder="Search blog..." />
-          <button type="submit" aria-label="Search">🔍</button>
-        </form>
-
-        <ul class="mobile-links">
-          <li><a href="#school">School</a></li>
-          <li><a href="#tools">Tools</a></li>
-          <li><a href="#analysis">Market</a></li>
-          <li><a href="#community">Community</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#newsletter">Newsletter</a></li> <!-- newsletter in hamburger -->
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
+        <ul>
+          <li><a href="#signin" class="mm-link">Sign In</a></li>
+          <li><a href="#signup" class="mm-link">Sign Up</a></li>
+          <li><a href="#school" class="mm-link">School</a></li>
+          <li><a href="#tools" class="mm-link">Tools</a></li>
+          <li><a href="#analysis" class="mm-link">Market</a></li>
+          <li><a href="#community" class="mm-link">Community</a></li>
+          <li><a href="#blog" class="mm-link">Blog</a></li>
+          <li><a href="#newsletter" class="mm-link">Newsletter</a></li>
         </ul>
-
-        <div class="mobile-auth">
-          <a class="link" href="#login">Login</a>
-          <a class="btn btn-primary block" href="#signup">Sign Up</a>
-        </div>
       </div>
     </div>
   </header>
 
   <main>
-
-    <!-- HERO: intentionally blank for ad placement; white background, small banner height on mobile/desktop -->
-    <!-- HERO SECTION -->
-    <section id="hero" class="wrap hero-blank" aria-label="Hero ad area">
-      <!-- blank white area reserved for ads - do not add content here -->
+    <!-- HERO section -->
+    <section id="hero" class="hero-blank" aria-label="Hero ad area">
+      <div class="wrap hero-ad">
+        <div class="ad-placeholder">Ad / Banner Area (120 x 600 or similar) — place ads here</div>
+      </div>
     </section>
 
-    <!-- QUICK FEATURES: continuous ticker style with faster mobile speed, pause on hover, fades, parallax + glow + center highlight -->
-    <!-- QUICK FEATURES SECTION -->
+    <!-- QUICK FEATURES: continuous carousel ticker -->
     <section id="quick" class="section-colored">
       <div class="wrap">
-        <h2 class="section-title">Why Students Love Our Academy</h2>
+        <!-- REMOVED "Core Features" heading -->
 
-        <div class="continuous-carousel" id="continuousCarousel" aria-hidden="false">
-          <div class="continuous-track" id="continuousTrack">
-            <!-- features: original set -->
+        <div class="continuous-carousel" id="featuresTicker" data-speed="35">
+          <!-- Ticker controls - moved to top with no space -->
+          <div class="ticker-controls">
+            <label for="tickerSpeed">Adjust Speed</label>
+            <input id="tickerSpeed" type="range" min="10" max="80" value="35">
+          </div>
+
+          <div class="continuous-track">
+            <!-- Repeatable feature cards -->
             <article class="feature">
               <h3>Beginner-Friendly Lessons</h3>
-              <p>Clear explanations about pips, lots, market orders, charts, and core trading ideas.</p>
+              <p>Clear explanations about pips, lots, orders, charts and core ideas.</p>
             </article>
 
             <article class="feature">
               <h3>Tools & Calculators</h3>
-              <p>Compute pip value, position size and manage risk effortlessly.</p>
+              <p>Pip calc, position size, economic calendar — practical utilities.</p>
             </article>
 
             <article class="feature">
               <h3>Progress Tracking</h3>
-              <p>Quizzes, progress reports and certificates to measure improvement.</p>
+              <p>Quizzes, badges and certificates to monitor improvement.</p>
             </article>
 
             <article class="feature">
               <h3>Real-World Examples</h3>
-              <p>Follow guided breakdowns of real charts and analyses.</p>
+              <p>Step-by-step breakdowns of actual trades and charts.</p>
             </article>
 
             <article class="feature">
               <h3>Trading Psychology</h3>
-              <p>Master discipline, patience and emotional control.</p>
+              <p>Mindset tools: discipline, risk control and journaling techniques.</p>
             </article>
 
             <article class="feature">
               <h3>Market Analysis Guides</h3>
-              <p>Understand fundamentals, technicals, trends and volatility.</p>
+              <p>Tech & fundamental lessons to interpret market moves.</p>
             </article>
 
             <article class="feature">
               <h3>Interactive Quizzes</h3>
-              <p>Test your knowledge after each module.</p>
+              <p>Short MCQs to reinforce learning and retention.</p>
             </article>
 
             <article class="feature">
               <h3>Community Support</h3>
-              <p>Join discussions, ask questions and grow with other learners.</p>
+              <p>Forums and peer-help to discuss trades and ideas.</p>
             </article>
 
             <article class="feature">
               <h3>Lifetime Access</h3>
-              <p>Learn at your own pace with unlimited platform access.</p>
+              <p>Learn at your own pace — content access for life.</p>
             </article>
           </div>
         </div>
 
-        <!-- start learning button below quick features (same style as header start learning) -->
-        <div class="center-cta">
-          <a class="btn btn-primary big-cta" href="#school">Start Learning</a>
+        <!-- Sign In/Sign Up links with additional content -->
+        <div class="center auth-section">
+          <div class="desktop-auth-inline">
+            <a class="auth-link" href="#signin">Sign In</a>
+            <span class="sep">|</span>
+            <a class="auth-link" href="#signup">Sign Up</a>
+          </div>
+          <p class="auth-note italic">Sign in or sign up to track your progress while learning</p>
+          
+          <div class="or-divider">
+            <span class="or-line"></span>
+            <span class="or-text">OR</span>
+            <span class="or-line"></span>
+          </div>
+          
+          <div class="start-learning-section">
+            <a href="#school" class="btn btn-primary start-learning-btn">Start Learning</a>
+            <p class="start-learning-note italic">You will not track your results if not registered</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOG + SIDEBAR SECTION -->
-    <!-- BLOG POSTS SECTION -->
+    <!-- BLOG POSTS + SIDEBAR -->
     <section id="blog" class="wrap blog-section">
       <div class="blog-grid">
+        <!-- POSTS COLUMN -->
+        <div class="posts-column">
+          <!-- ANALYSIS SECTION - Weekly Chart Analysis -->
+          <div class="analysis-section">
+            <div class="analysis-grid">
+              <!-- Post 1: Financial & Forex Market Recap -->
+              <article class="post post-analysis market-recap">
+                <div class="post-image">
+                  <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Financial market charts and graphs">
+                </div>
+                <div class="post-content">
+                  <div class="post-header">
+                    <h3>Financial & Forex Market Recap - Dec. 4, 2025</h3>
+                    <div class="post-meta">
+                      <span class="post-time">10 hours ago</span>
+                      <span class="post-author">by Pippo</span>
+                    </div>
+                  </div>
+                  <p class="excerpt">Markets treaded water Thursday ahead of next week's Fed decision, with oil rallying on geopolitical tensions while Bitcoin slumped and equities hovered near record highs.</p>
+                  <div class="post-footer">
+                    <a class="read-more" href="#">Read Full Analysis →</a>
+                  </div>
+                </div>
+              </article>
 
-        <!-- MAIN POSTS AREA -->
-        <div class="posts-area">
-          <h2 class="section-title">Latest Articles</h2>
-
-          <!-- Top two featured posts side-by-side on desktop, stacked on mobile -->
-          <div class="featured-row">
-            <article class="post post-large">
-              <img src="https://picsum.photos/800/450?random=1" alt="Demo post 1">
-              <div class="post-body">
-                <h3>How Forex Trading Works: A Beginner's Overview</h3>
-                <p class="excerpt">A friendly introduction to forex — how currency pairs move, what pips are, and the basics of trading safely.</p>
-                <a class="read-more" href="#">Read more →</a>
-              </div>
-            </article>
-
-            <article class="post post-large">
-              <img src="https://picsum.photos/800/450?random=2" alt="Demo post 2">
-              <div class="post-body">
-                <h3>Understanding Market Sessions and Their Impact</h3>
-                <p class="excerpt">Learn how trading sessions affect liquidity, volatility and the best times to trade major pairs.</p>
-                <a class="read-more" href="#">Read more →</a>
-              </div>
-            </article>
+              <!-- Post 2: ISM PMI Analysis -->
+              <article class="post post-analysis ism-pmi">
+                <div class="post-image">
+                  <img src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Economic data analysis">
+                </div>
+                <div class="post-content">
+                  <div class="post-header">
+                    <h3>What November's U.S. ISM PMI Surveys Are Really Saying</h3>
+                    <div class="post-meta">
+                      <span class="post-time">16 hours ago</span>
+                      <span class="post-author">by Pippo</span>
+                      <span class="post-category">DETAILWAY</span>
+                    </div>
+                  </div>
+                  <p class="excerpt">The November 2025 ISM reports just dropped, & they're painting a mixed picture of the U.S. economy. Let's dive deeper into what the numbers are really telling us.</p>
+                  <div class="post-footer">
+                    <a class="read-more" href="#">Read Full Analysis →</a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <!-- Grid for the remaining 12 posts (6 rows x 2 columns on desktop; stacked on mobile) -->
-          <div class="posts-grid" id="postsGrid">
-            <!-- Demo small posts (12) -->
-            <!-- We'll include 12 demo posts -->
-            <!-- Use loop-like structure in HTML manually -->
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=3" alt="post3">
-              <div class="post-body">
-                <h4>How to Use a Pip Calculator</h4>
-                <p class="excerpt">Quick example on calculating pip values for various lot sizes.</p>
-                <a class="read-more" href="#">Read →</a>
+          <!-- Tools Section (in posts column like BabyPips) -->
+          <div class="tools-inline">
+            <div class="tool-inline-card">
+              <div class="tool-icon-inline">⏰</div>
+              <div class="tool-content">
+                <h4>Forex Market Hours Tool</h4>
+                <p>When are the best times to trade forex? View them in your own local time zone!</p>
               </div>
-            </article>
+            </div>
+          </div>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=4" alt="post4">
-              <div class="post-body">
-                <h4>Top 5 Mistakes Beginners Make</h4>
-                <p class="excerpt">Avoid these common errors when you start trading forex.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+          <!-- REGULAR BLOG POSTS (Increased to 12) -->
+          <div class="regular-posts-section">
+            <div class="category-header">
+              <h3 class="category-title">Forex Markets</h3>
+            </div>
+            
+            <div class="posts-grid">
+              <!-- Post 3: Chart Art -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="EUR/JPY chart analysis">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Chart Art</span>
+                    EUR/JPY's Range Resistance Retest
+                  </h4>
+                  <p class="post-meta-time">a day ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=5" alt="post5">
-              <div class="post-body">
-                <h4>Position Sizing for Real Traders</h4>
-                <p class="excerpt">How to size positions to protect your account.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 4: Event Guide -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Canada employment data">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Event Guide</span>
+                    Canada's Employment Report (November 2025)
+                  </h4>
+                  <p class="post-meta-time">a day ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=6" alt="post6">
-              <div class="post-body">
-                <h4>Reading Candlestick Patterns</h4>
-                <p class="excerpt">Simple candle patterns you should know as a beginner.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 5: Strategy -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trend following strategy">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Strategy</span>
+                    Simple Trend Following for Beginners
+                  </h4>
+                  <p class="post-meta-time">2 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=7" alt="post7">
-              <div class="post-body">
-                <h4>Understanding Leverage</h4>
-                <p class="excerpt">Leverage explained: how it works and how to use it responsibly.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 6: Technical -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Candlestick patterns">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Technical</span>
+                    Reading Candlestick Patterns Effectively
+                  </h4>
+                  <p class="post-meta-time">3 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=8" alt="post8">
-              <div class="post-body">
-                <h4>Why Journaling Matters</h4>
-                <p class="excerpt">Track trades to improve your performance and discipline.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 7: Risk Management -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Risk management concepts">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Risk Management</span>
+                    The 2% Rule for Capital Protection
+                  </h4>
+                  <p class="post-meta-time">4 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=9" alt="post9">
-              <div class="post-body">
-                <h4>Trend vs Range Trading</h4>
-                <p class="excerpt">Which approach fits your personality and market conditions.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 8: Fundamentals -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Economic data impact">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Fundamentals</span>
+                    Impact of Economic Data Releases
+                  </h4>
+                  <p class="post-meta-time">5 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=10" alt="post10">
-              <div class="post-body">
-                <h4>How News Moves Markets</h4>
-                <p class="excerpt">Basic guide to economic releases and market reaction.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 9: Tools -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trading platform tools">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Tools</span>
+                    How to Use MT5 Efficiently
+                  </h4>
+                  <p class="post-meta-time">6 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=11" alt="post11">
-              <div class="post-body">
-                <h4>Support & Resistance Basics</h4>
-                <p class="excerpt">Use horizontal levels to find trade ideas.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 10: Psychology -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trading psychology">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Psychology</span>
+                    Keeping a Trading Journal
+                  </h4>
+                  <p class="post-meta-time">7 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=12" alt="post12">
-              <div class="post-body">
-                <h4>Risk Management Rules</h4>
-                <p class="excerpt">Simple risk rules that keep accounts alive.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 11: Forex Pairs -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Major forex pairs">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Forex Pairs</span>
+                    Analyzing Major Currency Correlations
+                  </h4>
+                  <p class="post-meta-time">8 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=13" alt="post13">
-              <div class="post-body">
-                <h4>Using Moving Averages</h4>
-                <p class="excerpt">How to use moving averages for trend direction.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 12: Market Hours -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Market session clock">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Trading Hours</span>
+                    Best Times to Trade Forex Sessions
+                  </h4>
+                  <p class="post-meta-time">9 days ago</p>
+                </div>
+              </article>
 
-            <article class="post post-small">
-              <img src="https://picsum.photos/400/260?random=14" alt="post14">
-              <div class="post-body">
-                <h4>Preparing a Trading Plan</h4>
-                <p class="excerpt">A checklist for building your first trading plan.</p>
-                <a class="read-more" href="#">Read →</a>
-              </div>
-            </article>
+              <!-- Post 13: Support Resistance -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Support resistance lines">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Technical</span>
+                    Identifying Support & Resistance Levels
+                  </h4>
+                  <p class="post-meta-time">10 days ago</p>
+                </div>
+              </article>
+
+              <!-- Post 14: Broker Selection -->
+              <article class="post post-regular">
+                <div class="post-image-small">
+                  <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Broker platform interface">
+                </div>
+                <div class="post-info">
+                  <h4 class="post-title-with-category">
+                    <span class="post-category-small">Beginners</span>
+                    How to Choose a Forex Broker
+                  </h4>
+                  <p class="post-meta-time">11 days ago</p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
 
-        <!-- SIDEBAR (Desktop only): ads and feature demos in sequence -->
-        <aside class="sidebar desktop-only">
-          <div class="ad-card">
-            <img src="https://picsum.photos/300/150?random=21" alt="ad demo 1">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <!-- Ad Block 1 -->
+          <div class="side-block ad-block">
+            <div class="ad-label">Advertisement</div>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=80" alt="Premium Trading Tools">
+            <div class="ad-text">Upgrade Your Trading with Professional Tools</div>
           </div>
 
-          <div class="feature-card">
+          <!-- Feature Block 1 -->
+          <div class="side-block feature-block">
+            <div class="feature-label">Featured Tool</div>
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=80" alt="Pip Calculator">
             <h4>Pip Calculator</h4>
-            <p>Demo preview</p>
-            <img src="https://picsum.photos/300/140?random=22" alt="feature demo pip">
+            <p>Calculate pip values instantly for any currency pair with our interactive calculator.</p>
+            <a href="#pip-calc" class="feature-link">Try It Now →</a>
           </div>
 
-          <div class="ad-card">
-            <img src="https://picsum.photos/300/150?random=23" alt="ad demo 2">
+          <!-- Ad Block 2 -->
+          <div class="side-block ad-block">
+            <div class="ad-label">Sponsored</div>
+            <img src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=80" alt="Trading Platform">
+            <div class="ad-text">Start Trading with Low Spreads</div>
           </div>
 
-          <div class="feature-card">
-            <h4>Position Size Tool</h4>
-            <p>Demo preview</p>
-            <img src="https://picsum.photos/300/140?random=24" alt="feature demo pos">
+          <!-- Feature Block 2 -->
+          <div class="side-block feature-block">
+            <div class="feature-label">New Feature</div>
+            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=80" alt="Position Sizer">
+            <h4>Position Size Calculator</h4>
+            <p>Determine optimal position sizes based on your account balance and risk tolerance.</p>
+            <a href="#position-sizer" class="feature-link">Calculate Now →</a>
           </div>
 
-          <div class="ad-card">
-            <img src="https://picsum.photos/300/150?random=25" alt="ad demo 3">
+          <!-- Ad Block 3 -->
+          <div class="side-block ad-block">
+            <div class="ad-label">Advertisement</div>
+            <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=80" alt="Forex Signals">
+            <div class="ad-text">Professional Trading Signals</div>
           </div>
 
-          <div class="feature-card">
+          <!-- Feature Block 3 -->
+          <div class="side-block feature-block">
+            <div class="feature-label">Tool Preview</div>
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=80" alt="Economic Calendar">
             <h4>Economic Calendar</h4>
-            <p>Demo preview</p>
-            <img src="https://picsum.photos/300/140?random=26" alt="feature demo cal">
+            <p>Track important economic events and their potential market impact.</p>
+            <a href="#calendar" class="feature-link">View Calendar →</a>
           </div>
         </aside>
-
       </div>
     </section>
 
-    <!-- On mobile we show a small nav reminder after blog posts (per your request) -->
-    <nav class="mobile-nav-after-posts mobile-only">
+    <!-- SCHOOL LEVELS: carousel with centered heading -->
+    <section id="school" class="levels-section">
       <div class="wrap">
-        <ul>
-          <li><a href="#school">School</a></li>
-          <li><a href="#tools">Tools</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#community">Community</a></li>
-        </ul>
-      </div>
-    </nav>
+        <header class="section-header center">
+          <h2>Structured Learning Path</h2>
+          <p class="subtitle">Move from basics to confident trading with step-by-step levels.</p>
+        </header>
 
-    <!-- SCHOOL LEVELS: carousel with per-level CTA buttons -->
-    <!-- SCHOOL LEVELS SECTION -->
-    <section id="school" class="wrap section-gradient">
-      <header class="section-header">
-        <h2>Structured Learning Path</h2>
-        <p class="subtitle">Move from basics to confident trading with our step-by-step levels.</p>
-      </header>
+        <div class="levels-carousel">
+          <div class="levels-track">
+            <!-- Level cards -->
+            <div class="level-card">
+              <div class="level-badge">Level 1</div>
+              <h4>Forex Basics</h4>
+              <p>What forex is, currency pairs, pips, lots, and reading charts.</p>
+              <a class="btn btn-primary level-btn" href="#level1">Enter Class</a>
+            </div>
 
-      <div class="levels-carousel-wrapper">
-        <button class="level-arrow prev" aria-label="Previous level">‹</button>
-        <div class="levels-carousel" id="levelsCarousel">
-          <div class="level">
-            <div class="level-badge">Level 1</div>
-            <h4>Forex Basics</h4>
-            <p>Understand what forex is, currency pairs and how to read price charts.</p>
-            <a class="btn btn-primary level-cta" href="#level1">Start Class</a>
+            <div class="level-card">
+              <div class="level-badge">Level 2</div>
+              <h4>Charting & Strategy Foundations</h4>
+              <p>Price action, candles, indicators and strategy building.</p>
+              <a class="btn btn-primary level-btn" href="#level2">Enter Class</a>
+            </div>
+
+            <div class="level-card">
+              <div class="level-badge">Level 3</div>
+              <h4>Market Analysis</h4>
+              <p>Technical & fundamental analysis and multi-timeframe thinking.</p>
+              <a class="btn btn-primary level-btn" href="#level3">Enter Class</a>
+            </div>
+
+            <div class="level-card">
+              <div class="level-badge">Level 4</div>
+              <h4>Risk & Psychology</h4>
+              <p>Position sizing, risk rules, journaling and discipline.</p>
+              <a class="btn btn-primary level-btn" href="#level4">Enter Class</a>
+            </div>
+
+            <div class="level-card">
+              <div class="level-badge">Level 5</div>
+              <h4>Advanced Strategies</h4>
+              <p>Higher-level concepts & backtesting frameworks.</p>
+              <a class="btn btn-primary level-btn" href="#level5">Enter Class</a>
+            </div>
+
+            <div class="level-card">
+              <div class="level-badge">Level 6</div>
+              <h4>Algorithmic Intro</h4>
+              <p>Basics of algorithmic and mechanical systems.</p>
+              <a class="btn btn-primary level-btn" href="#level6">Enter Class</a>
+            </div>
+            
+            <!-- Duplicate cards for continuous sliding -->
+            <div class="level-card">
+              <div class="level-badge">Level 1</div>
+              <h4>Forex Basics</h4>
+              <p>What forex is, currency pairs, pips, lots, and reading charts.</p>
+              <a class="btn btn-primary level-btn" href="#level1">Enter Class</a>
+            </div>
+
+            <div class="level-card">
+              <div class="level-badge">Level 2</div>
+              <h4>Charting & Strategy Foundations</h4>
+              <p>Price action, candles, indicators and strategy building.</p>
+              <a class="btn btn-primary level-btn" href="#level2">Enter Class</a>
+            </div>
+
+            <div class="level-card">
+              <div class="level-badge">Level 3</div>
+              <h4>Market Analysis</h4>
+              <p>Technical & fundamental analysis and multi-timeframe thinking.</p>
+              <a class="btn btn-primary level-btn" href="#level3">Enter Class</a>
+            </div>
           </div>
-
-          <div class="level">
-            <div class="level-badge">Level 2</div>
-            <h4>Charting & Strategies</h4>
-            <p>Price action, candles, indicators and simple strategy foundations.</p>
-            <a class="btn btn-primary level-cta" href="#level2">Start Class</a>
-          </div>
-
-          <div class="level">
-            <div class="level-badge">Level 3</div>
-            <h4>Market Analysis</h4>
-            <p>Technical and fundamental analysis, multi-timeframe thinking and macro drivers.</p>
-            <a class="btn btn-primary level-cta" href="#level3">Start Class</a>
-          </div>
-
-          <div class="level">
-            <div class="level-badge">Level 4</div>
-            <h4>Risk & Psychology</h4>
-            <p>Position sizing, risk rules, emotional control, and journaling for consistency.</p>
-            <a class="btn btn-primary level-cta" href="#level4">Start Class</a>
-          </div>
-
-          <div class="level">
-            <div class="level-badge">Level 5</div>
-            <h4>Advanced Strategy</h4>
-            <p>Advanced setups and backtesting principles.</p>
-            <a class="btn btn-primary level-cta" href="#level5">Start Class</a>
-          </div>
-
-          <div class="level">
-            <div class="level-badge">Level 6</div>
-            <h4>Live Trading Concepts</h4>
-            <p>Simulations and live examples.</p>
-            <a class="btn btn-primary level-cta" href="#level6">Start Class</a>
-          </div>
-
-        </div>
-        <button class="level-arrow next" aria-label="Next level">›</button>
-      </div>
-    </section>
-
-    <!-- TOOLS SECTION: illuminated cards with glow -->
-    <!-- TOOLS SECTION -->
-    <section id="tools" class="wrap section-dark tools-illuminated">
-      <header class="section-header light">
-        <h2>Practical Tools</h2>
-        <p class="subtitle">Handy calculators and a market calendar to support your learning.</p>
-      </header>
-
-      <div class="tools-grid">
-        <div class="tool-card">
-          <h4>Pip Calculator</h4>
-          <p>Estimate pip values for different pairs and lot sizes.</p>
-          <a class="tool-link" href="#pip">Open</a>
-        </div>
-        <div class="tool-card">
-          <h4>Position Size Calculator</h4>
-          <p>Calculate lot size using your risk per trade and stop-loss distance.</p>
-          <a class="tool-link" href="#position">Open</a>
-        </div>
-        <div class="tool-card">
-          <h4>Economic Calendar</h4>
-          <p>Track releases and their potential market impact.</p>
-          <a class="tool-link" href="#calendar">View</a>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS: sliding carousel (center highlight effect) -->
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonials" class="wrap">
-      <header class="section-header">
-        <h2>Student Stories</h2>
-        <p class="subtitle">Learners who built their foundations with Galaxy Pips Academy.</p>
-      </header>
+    <!-- TOOLS: sliding carousel -->
+    <section id="tools" class="tools-section">
+      <div class="wrap">
+        <header class="section-header center light">
+          <h2>Practical Trading Tools</h2>
+          <p class="subtitle">Essential calculators and utilities to support your trading journey</p>
+        </header>
 
-      <div class="test-carousel" id="testCarousel">
-        <div class="test-track">
-          <blockquote class="testimonial"> <p>"Clear lessons and practical tools — perfect for getting started."</p><cite>— A. Mwanga</cite></blockquote>
-          <blockquote class="testimonial"> <p>"The quizzes helped me retain what I learned. Highly recommended."</p><cite>— T. Njoroge</cite></blockquote>
-          <blockquote class="testimonial"> <p>"I appreciated the risk-first approach. Clear, realistic, and helpful."</p><cite>— L. Ade</cite></blockquote>
-          <blockquote class="testimonial"> <p>"Easy to follow modules with useful examples."</p><cite>— M. Otieno</cite></blockquote>
+        <div class="tools-carousel">
+          <div class="tools-track">
+            <div class="tool-card">
+              <div class="tool-icon">📊</div>
+              <h4>Pip Calculator</h4>
+              <p>Calculate pip value for any currency pair and lot size instantly</p>
+              <a class="tool-link" href="#pip">Open Calculator →</a>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">⚖️</div>
+              <h4>Position Size Calculator</h4>
+              <p>Determine optimal lot size based on your risk tolerance and stop loss</p>
+              <a class="tool-link" href="#position">Calculate →</a>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">📅</div>
+              <h4>Economic Calendar</h4>
+              <p>Track important economic events and their potential market impact</p>
+              <a class="tool-link" href="#calendar">View Calendar →</a>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">🔥</div>
+              <h4>Currency Heatmap</h4>
+              <p>Visual overview of currency strength across major FX pairs</p>
+              <a class="tool-link" href="#heatmap">View Heatmap →</a>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">📈</div>
+              <h4>Volatility Meter</h4>
+              <p>Measure current market volatility for better position sizing</p>
+              <a class="tool-link" href="#volatility">Check Volatility →</a>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">💱</div>
+              <h4>Margin Calculator</h4>
+              <p>Calculate required margin for your trading positions</p>
+              <a class="tool-link" href="#margin">Calculate →</a>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">🎯</div>
+              <h4>Profit Calculator</h4>
+              <p>Estimate potential profits based on entry and exit points</p>
+              <a class="tool-link" href="#profit">Calculate →</a>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">🔄</div>
+              <h4>Swap Calculator</h4>
+              <p>Calculate overnight swap/rollover rates for positions</p>
+              <a class="tool-link" href="#swap">Calculate →</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- NEWSLETTER (unchanged) -->
-    <section id="newsletter" class="wrap section-colored">
-      <div class="newsletter-card">
-        <h3>Join the Academy Newsletter</h3>
-        <p>Get lesson tips and market notes. We respect your privacy — unsubscribe anytime.</p>
-        <form id="newsletterForm" class="newsletter-form" aria-label="Newsletter signup">
-          <input id="email" name="email" type="email" placeholder="you@example.com" required />
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-        <p class="small muted">We never sell your data. See our <a href="#privacy">Privacy Policy</a>.</p>
+    <!-- TESTIMONIALS: sliding carousel -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="wrap">
+        <header class="section-header center">
+          <h2>Student Success Stories</h2>
+          <p class="subtitle">Hear from traders who built their foundation with Galaxy Pips Academy</p>
+        </header>
+
+        <div class="test-carousel">
+          <div class="test-track">
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"The structured learning path gave me confidence to trade properly. Risk management lessons alone were worth it!"</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">A</div>
+                <div class="author-info">
+                  <cite>— A. Mwanga</cite>
+                  <span class="author-role">Beginner Trader, 6 months</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"Interactive quizzes and progress tracking kept me engaged. Went from zero to understanding charts in 3 weeks."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">T</div>
+                <div class="author-info">
+                  <cite>— T. Njoroge</cite>
+                  <span class="author-role">Part-time Trader</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"Practical approach - real examples, calculators that work, and no fluff. Focuses on what traders actually need."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">L</div>
+                <div class="author-info">
+                  <cite>— L. Ade</cite>
+                  <span class="author-role">Full-time Trader</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"Weekly analysis helped me understand market structure. Now identify key levels before placing trades."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">N</div>
+                <div class="author-info">
+                  <cite>— N. Kamanzi</cite>
+                  <span class="author-role">Swing Trader, 1 year</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"Community support was invaluable. Discussing trades with other learners accelerated my learning curve."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">R</div>
+                <div class="author-info">
+                  <cite>— R. Oketch</cite>
+                  <span class="author-role">Forex Student</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"Tools section is fantastic! Position size calculator saved me from over-leveraging. Essential for serious traders."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">S</div>
+                <div class="author-info">
+                  <cite>— S. Patel</cite>
+                  <span class="author-role">Risk-conscious Trader</span>
+                </div>
+              </div>
+            </blockquote>
+            
+            <!-- Duplicate testimonials for continuous sliding -->
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"The structured learning path gave me confidence to trade properly."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">A</div>
+                <div class="author-info">
+                  <cite>— A. Mwanga</cite>
+                  <span class="author-role">Beginner Trader, 6 months</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <div class="testimonial-quote">
+                <p>"Interactive quizzes and progress tracking kept me engaged. Went from zero to understanding charts in 3 weeks."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">T</div>
+                <div class="author-info">
+                  <cite>— T. Njoroge</cite>
+                  <span class="author-role">Part-time Trader</span>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- DISCLAIMER (unchanged) -->
-    <section class="wrap disclaimer">
+    <!-- NEWSLETTER -->
+    <section id="newsletter" class="section-colored">
+      <div class="wrap">
+        <div class="newsletter-card center">
+          <h3>Join the Academy Newsletter</h3>
+          <p>Get lesson tips and market notes. We respect your privacy — unsubscribe anytime.</p>
+          <form id="newsletterForm" class="newsletter-form" aria-label="Newsletter signup">
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p class="small muted">We never sell your data. See our <a href="#privacy">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="wrap disclaimer-light">
       <p><strong>Risk Disclaimer:</strong> Galaxy Pips Academy provides educational content only. Trading forex involves risk and can lead to losses. We do not provide investment advice or guarantee profits. Always manage risk and consider independent advice.</p>
     </section>
   </main>
 
-  <!-- FOOTER: keep structure but links white -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="col">
